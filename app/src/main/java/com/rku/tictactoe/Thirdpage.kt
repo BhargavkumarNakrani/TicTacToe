@@ -199,7 +199,7 @@ class ThirdPage : AppCompatActivity() {
     }
 
     fun updateDatabase(cellId: Int) {
-        FirebaseDatabase.getInstance().reference.child("data").child(code).push().setValue(cellId);
+        FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("data").child(code).push().setValue(cellId);
     }
 
     fun checkwinner(): Int {
