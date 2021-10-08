@@ -34,7 +34,7 @@ class ThirdPage : AppCompatActivity() {
     lateinit var box8Btn:Button
     lateinit var box9Btn:Button
     lateinit var resetBtn:Button
-    lateinit var turn:Button
+    lateinit var turn:TextView
 
     var player1Count = 0
     var player2Count = 0
@@ -56,9 +56,9 @@ class ThirdPage : AppCompatActivity() {
         box7Btn = findViewById(R.id.idBtnBox7)
         box8Btn = findViewById(R.id.idBtnBox8)
         box9Btn = findViewById(R.id.idBtnBox9)
-        resetBtn = findViewById(R.id.idBtnReset)!!
-        player1 = findViewById(R.id.idPlayer1)
-        player2 = findViewById(R.id.idPlayer2)
+        resetBtn = findViewById(R.id.button10)
+        player1 = findViewById(R.id.textView)
+        player2 = findViewById(R.id.textView2)
         turn = findViewById(R.id.idTurn)
 
         resetBtn.setOnClickListener {

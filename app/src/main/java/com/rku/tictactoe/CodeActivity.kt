@@ -108,6 +108,7 @@ class CodeActivity : AppCompatActivity() {
                                 if (data == true) {
                                     codeFound = true
                                     accepted()
+                                    Toast.makeText(applicationContext,"this is toast message "+data,Toast.LENGTH_SHORT).show()
                                     Create.visibility = View.VISIBLE
                                     Join.visibility = View.VISIBLE
                                     GameCode.visibility = View.VISIBLE
