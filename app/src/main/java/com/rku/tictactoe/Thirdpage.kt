@@ -56,7 +56,7 @@ class ThirdPage : AppCompatActivity() {
         box7Btn = findViewById(R.id.idBtnBox7)
         box8Btn = findViewById(R.id.idBtnBox8)
         box9Btn = findViewById(R.id.idBtnBox9)
-        resetBtn = findViewById(R.id.idBtnReset)
+        resetBtn = findViewById(R.id.idBtnReset)!!
         player1 = findViewById(R.id.idPlayer1)
         player2 = findViewById(R.id.idPlayer2)
         turn = findViewById(R.id.idTurn)
@@ -64,10 +64,11 @@ class ThirdPage : AppCompatActivity() {
         resetBtn.setOnClickListener {
             reset()
         }
-        FirebaseDatabase.getInstance().reference.child("data").child(code)
+        FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("data").child(code)
             .addChildEventListener(object : ChildEventListener {
                 override fun onCancelled(error: DatabaseError) {
                     TODO("Not yet implemented")
+
                 }
 
                 override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
@@ -323,7 +324,7 @@ class ThirdPage : AppCompatActivity() {
             isMyMove = isCodeMaker
             //startActivity(Intent(this,ThirdPage::class.java))
             if (isCodeMaker) {
-                FirebaseDatabase.getInstance().reference.child("data").child(code).removeValue()
+                FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("data").child(code).removeValue()
             }
 
 
@@ -375,7 +376,7 @@ class ThirdPage : AppCompatActivity() {
 
     fun removeCode() {
         if (isCodeMaker) {
-            FirebaseDatabase.getInstance().reference.child("codes").child(keyValue).removeValue()
+            FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("codes").child(keyValue).removeValue()
         }
     }
 
@@ -391,7 +392,7 @@ class ThirdPage : AppCompatActivity() {
     override fun onBackPressed() {
         removeCode()
         if (isCodeMaker) {
-            FirebaseDatabase.getInstance().reference.child("data").child(code).removeValue()
+            FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("data").child(code).removeValue()
         }
         exitProcess(0)
     }

@@ -36,10 +36,10 @@ class CodeActivity : AppCompatActivity() {
             textView4.visibility = View.GONE
             progressBar.visibility = View.VISIBLE
             if (code != "null" && code != null && code != "") {
-
                 isCodeMaker = true;
-                FirebaseDatabase.getInstance().reference.child("codes")
+                FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("codes")
                     .addValueEventListener(object : ValueEventListener {
+
                         override fun onCancelled(error: DatabaseError) {
                             TODO("Not yet implemented")
                         }
@@ -56,7 +56,7 @@ class CodeActivity : AppCompatActivity() {
                                     progressBar.visibility = View.GONE
 
                                 } else {
-                                    FirebaseDatabase.getInstance().reference.child("codes").push()
+                                    FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("codes").push()
                                         .setValue(code)
                                     isValueAvailable(snapshot, code)
                                     checkTemp = false
@@ -95,7 +95,7 @@ class CodeActivity : AppCompatActivity() {
                 textView4.visibility = View.GONE
                 progressBar.visibility = View.VISIBLE
                 isCodeMaker = false;
-                FirebaseDatabase.getInstance().reference.child("codes")
+                FirebaseDatabase.getInstance("https://tic-tac-toe-669e7-default-rtdb.firebaseio.com/").reference.child("codes")
                     .addValueEventListener(object : ValueEventListener {
                         override fun onCancelled(error: DatabaseError) {
                             TODO("Not yet implemented")
