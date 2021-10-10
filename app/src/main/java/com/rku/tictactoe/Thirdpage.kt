@@ -225,11 +225,11 @@ class ThirdPage : AppCompatActivity() {
             val build = AlertDialog.Builder(this)
             build.setTitle("Game Over")
             build.setMessage("Player 1 Wins!!" + "\n\n" + "Do you want to play again")
-            build.setPositiveButton("Ok") { dialog, which ->
+            build.setPositiveButton("Yes") { dialog, which ->
                 reset()
                 audio.release()
             }
-            build.setNegativeButton("Exit") { dialog, which ->
+            build.setNegativeButton("No") { dialog, which ->
                 audio.release()
                 removeCode()
                 exitProcess(1)
@@ -260,11 +260,11 @@ class ThirdPage : AppCompatActivity() {
             val build = AlertDialog.Builder(this)
             build.setTitle("Game Over")
             build.setMessage("Player 2 Wins!!" + "\n\n" + "Do you want to play again")
-            build.setPositiveButton("Ok") { dialog, which ->
+            build.setPositiveButton("Yes") { dialog, which ->
                 reset()
                 audio.release()
             }
-            build.setNegativeButton("Exit") { dialog, which ->
+            build.setNegativeButton("No") { dialog, which ->
                 audio.release()
                 removeCode()
                 exitProcess(1)

@@ -144,11 +144,11 @@ class MainActivity : AppCompatActivity() {
             val build = AlertDialog.Builder(this)
             build.setTitle("Game Over")
             build.setMessage("You have won the game.."+"\n\n"+"Do you want to play again")
-            build.setPositiveButton("Ok") { dialog, which ->
+            build.setPositiveButton("Yes") { dialog, which ->
                 reset()
                 audio.release()
             }
-            build.setNegativeButton("Exit") { dialog, which ->
+            build.setNegativeButton("No") { dialog, which ->
                 audio.release()
                 exitProcess(1)
 
@@ -178,11 +178,11 @@ class MainActivity : AppCompatActivity() {
             val build = AlertDialog.Builder(this)
             build.setTitle("Game Over")
             build.setMessage("Opponent have won the game"+"\n\n"+"Do you want to play again")
-            build.setPositiveButton("Ok") { dialog, which ->
+            build.setPositiveButton("Yes") { dialog, which ->
                 reset()
                 audio.release()
             }
-            build.setNegativeButton("Exit") { dialog, which ->
+            build.setNegativeButton("No") { dialog, which ->
                 audio.release()
                 exitProcess(1)
             }
